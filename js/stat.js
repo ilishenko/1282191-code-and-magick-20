@@ -32,7 +32,7 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, (Math.round(Math.random() * 10)) / 10)';
+      ctx.fillStyle = 'hsla(240, 100%, 50%, Math.round(Math.random() * 10) / 10)';
     }
 
     ctx.fillRect(130 + 90 * i, 100 + BAR_WIDTH - (BAR_WIDTH * times[i] / maxTime), 40, BAR_WIDTH * times[i] / maxTime);
