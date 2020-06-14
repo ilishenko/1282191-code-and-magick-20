@@ -36,14 +36,18 @@ var getWizard = function (name, surname, coat, eyes) {
   return wizard;
 };
 
+var getWizardCollection = function (wizard) {
+  wizard = getWizard(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR);
+  return wizard;
+};
+
 
 var getWizardElement = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
-  wizard = getWizard(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR);
 
-  wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
-  wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
+  wizardElement.querySelector('.setup-similar-label').textContent = getWizardCollection(wizard).name;
+  wizardElement.querySelector('.wizard-coat').style.fill = getWizardCollection(wizard).coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = getWizardCollection(wizard).eyesColor;
 
   return wizardElement;
 };
