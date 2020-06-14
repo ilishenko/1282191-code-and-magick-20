@@ -39,7 +39,7 @@ var getWizard = function (name, surname, coat, eyes) {
 
 var getWizardElement = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
-  var wizard = getWizard(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR);
+  wizard = getWizard(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR);
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
@@ -50,6 +50,6 @@ var getWizardElement = function (wizard) {
 
 var fragment = document.createDocumentFragment();
 for (var i = 0; i < QUANTITY_PLAYERS; i++) {
-  fragment.appendChild(getWizardElement(wizard));
+  fragment.appendChild(getWizardElement());
 }
 similarListElement.appendChild(fragment);
